@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:name="com.mengistu.transport_for_london.TFLUAPP"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/tfl_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/tfl_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TransposrtForLondon"
+        tools:targetApi="31">
+        <activity
+            android:name="com.mengistu.transport_for_london.presentation.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.TransposrtForLondon">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
