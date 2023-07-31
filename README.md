@@ -40,7 +40,6 @@ Gson
 
 Mockito
 
-Firebase
 
 # API
 
