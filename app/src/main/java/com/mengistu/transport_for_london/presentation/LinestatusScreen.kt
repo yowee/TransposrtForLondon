@@ -31,18 +31,18 @@ import com.mengistu.transport_for_london.data.model.LineModelItemModel
 import com.mengistu.transport_for_london.data.model.LineStatuseModel
 
 @Composable
-fun LineStatusItem(lineStatus: LineStatuseModel) {
+fun LineStatusItem(lineStatus: LineStatuseModel?) {
 
     Column(
         modifier = Modifier
             .padding(8.dp)
             .fillMaxWidth()
     ) {
-        Text(text = "Line ID: ${lineStatus.lineId}")
-        Text(text = "Status Severity: ${lineStatus.statusSeverity}")
-        Text(text = "Status Severity Description: ${lineStatus.statusSeverityDescription}")
-        Text(text = "Reason: ${lineStatus.reason}")
-        Text(text = "Closure Text: ${lineStatus.disruption?.closureText}")
+        Text(text = "Line ID: ${lineStatus?.lineId}")
+        Text(text = "Status Severity: ${lineStatus?.statusSeverity}")
+        Text(text = "Status Severity Description: ${lineStatus?.statusSeverityDescription}")
+        Text(text = "Reason: ${lineStatus?.reason}")
+        Text(text = "Closure Text: ${lineStatus?.disruption?.closureText}")
     }
 
 }
@@ -114,14 +114,17 @@ fun LineItem(
                 enter = fadeIn(animationSpec = tween(300)),
                 exit = fadeOut(animationSpec = tween(1000))
             ) {
-                Text(
-                    text = reasonText,
-
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = 8.dp)
-                        .animateContentSize() // Animate content size when it becomes visible or gone
-                )
+                
+                LineStatusItem(lineStatus = item.lineStatuses?.get(0))
+                
+//                Text(
+//                    text = reasonText,
+//
+//                    modifier = Modifier
+//                        .fillMaxWidth()
+//                        .padding(top = 8.dp)
+//                        .animateContentSize() // Animate content size when it becomes visible or gone
+//                )
             }
         }
     }
@@ -139,6 +142,8 @@ fun PreviewNameAndAnimatedStatus() {
 
     }
 }
+
+
 /*
 
 
