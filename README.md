@@ -5,7 +5,7 @@ Transport for London is simple single mobile application That  shows the current
 
 ## Installation
 
-[Clone Stocks](https://github.com/yowee/TransposrtForLondon) and open run it in your ide
+[Clone TFL](https://github.com/yowee/TransposrtForLondon) and open run it in your ide
 
 
 ## Permissions
